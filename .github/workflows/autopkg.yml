@@ -69,4 +69,5 @@ jobs:
 
     - name: Run AutoPkg
       run: |
+        autopkg update-trust-info Firefox.munki.recipe
         python3 autopkg_tools.py -l recipe_list.json
