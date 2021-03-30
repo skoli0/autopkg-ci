@@ -1,6 +1,6 @@
 This directory contains an example setup of using Github Actions to orchestrate AutoPkg and Munki.
 
-### How it works
+### How it works!
 
 We've supplied an example override for Firefox.
 
