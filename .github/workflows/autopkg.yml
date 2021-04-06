@@ -74,5 +74,5 @@ jobs:
       
     - name: Run makecatalogs and iconimporter
       run: |
-        /usr/local/munki/makecatalogs munki_repo
-        /usr/local/munki/makecatalogs munki_repo
+        /usr/local/munki/makecatalogs ${{ env.REPO_DIR }}
+        /usr/local/munki/iconimporter ${{ env.REPO_DIR }}
