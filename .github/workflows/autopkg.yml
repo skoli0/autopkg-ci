@@ -46,7 +46,7 @@ jobs:
         /bin/mkdir -p "${{ env.REPO_DIR }}/pkgs"
         /bin/mkdir -p "${{ env.REPO_DIR }}/pkgsinfo"
         /bin/mkdir -p "${{ env.REPO_DIR }}/icons"
-        chmod -R a+rX "${ env.REPO_DIR }}"
+        /bin/chmod -R a+rX "${{ env.REPO_DIR }}"
 
     - name: Install AutoPkg
       run: |
