@@ -7,6 +7,7 @@ MUNKIICONIMPORTER="/usr/local/munki/iconimporter"
 MANIFESTUTIL="/usr/local/munki/manifestutil"
 
 defaults read com.github.autopkg
+defaults read com.googlecode.munki.munkiimport
 
 aLen=${#AUTOPKGRECIPES[@]}
 echo "$aLen" "overrides to create"
