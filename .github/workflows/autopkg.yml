@@ -34,9 +34,9 @@ jobs:
 
     - name: Configure Munki
       run: |
-        sudo /usr/bin/defaults write com.googlecode.munki.munkiimport repo_path "${{ env.REPO_DIR }}"
-        sudo /usr/bin/defaults write com.googlecode.munki.munkiimport pkginfo_extension .plist
-        sudo /usr/bin/defaults write com.googlecode.munki.munkiimport default_catalog testing
+        /usr/bin/defaults write com.googlecode.munki.munkiimport repo_url "${{ env.REPO_DIR }}"
+        /usr/bin/defaults write com.googlecode.munki.munkiimport pkginfo_extension .plist
+        /usr/bin/defaults write com.googlecode.munki.munkiimport default_catalog testing
       
     - name: Set up a local Munki repo
       run: |
