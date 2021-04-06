@@ -6,6 +6,8 @@ MUNKIMAKECATALOGS="/usr/local/munki/makecatalogs"
 MUNKIICONIMPORTER="/usr/local/munki/iconimporter"
 MANIFESTUTIL="/usr/local/munki/manifestutil"
 
+defaults read com.github.autopkg
+
 aLen=${#AUTOPKGRECIPES[@]}
 echo "$aLen" "overrides to create"
 
@@ -17,7 +19,7 @@ do
     ${AUTOPKG} update-trust-info "${AUTOPKGRECIPES[$j]}"
     echo "Added ${AUTOPKGRECIPES[$j]} override"
     echo "Running ${AUTOPKGRECIPES[$j]} recipe"
-    ${AUTOPKG} run "${AUTOPKGRECIPES[$j]}"
+    ${AUTOPKG} run -v "${AUTOPKGRECIPES[$j]}"
 done
 
 ${MANIFESTUTIL} new-manifest site_default
