@@ -30,7 +30,7 @@ jobs:
     - name: Install Munki
       run: |
         curl -L $(curl https://api.github.com/repos/munki/munki/releases | python -c 'import json,sys;obj=json.load(sys.stdin);print obj[0]["assets"][0]["browser_download_url"]') --output /tmp/munkitools.pkg
-        sudo installer -pkg /tmp/munkitools.pkg -target /
+        sudo installer -verboseR -pkg /tmp/munkitools.pkg -target /
 
     - name: Configure Munki
       run: |
@@ -51,7 +51,7 @@ jobs:
     - name: Install AutoPkg
       run: |
         curl -L $(curl https://api.github.com/repos/autopkg/autopkg/releases | python -c 'import json,sys;obj=json.load(sys.stdin);print obj[0]["assets"][0]["browser_download_url"]') --output /tmp/autopkg.pkg
-        sudo installer -pkg /tmp/autopkg.pkg -target /
+        sudo installer -verboseR -pkg /tmp/autopkg.pkg -target /
 
     - name: Lint recipes
       run: |
