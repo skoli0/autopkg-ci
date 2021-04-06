@@ -17,8 +17,8 @@ jobs:
     env:
       REPO_DIR: "/Users/Shared/munki_repo"
     steps:
-    - name: Checkout AutoPkg recipes
-      uses: actions/checkout@28c7f3d2b5162b5ddd3dfd9a45aa55eaf396478b # Pin SHA1 hash instead of version
+    - name: Checkout GitHub actions 
+      uses: actions/checkout@v2
       with:
         fetch-depth: 1
 
