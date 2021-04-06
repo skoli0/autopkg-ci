@@ -12,12 +12,12 @@ echo "$aLen" "overrides to create"
 for (( j=0; j<aLen; j++));
 do
     echo "Adding ${AUTOPKGRECIPES[$j]} override"
-    ${AUTOPKG} make-override -f "${AUTOPKGRECIPES[$j]}.munki.recipe"
+    ${AUTOPKG} make-override -f "${AUTOPKGRECIPES[$j]}"
     echo "Updating trust info for ${AUTOPKGRECIPES[$j]}"
-    ${AUTOPKG} update-trust-info "${AUTOPKGRECIPES[$j]}.munki.recipe"
+    ${AUTOPKG} update-trust-info "${AUTOPKGRECIPES[$j]}"
     echo "Added ${AUTOPKGRECIPES[$j]} override"
     echo "Running ${AUTOPKGRECIPES[$j]} recipe"
-    ${AUTOPKG} run "${AUTOPKGRECIPES[$j]}.munki.recipe"
+    ${AUTOPKG} run "${AUTOPKGRECIPES[$j]}"
 done
 
 ${MANIFESTUTIL} new-manifest site_default
